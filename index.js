@@ -1,0 +1,28 @@
+const http = require('http')
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {  
+    res.statusCode = 200;  
+    if(req.url = "/name") {
+       res.setHeader('Content-Type', 'text/html');  
+       res.write('<h1 style="color: red">SAMIR HADDADI</h1>'); 
+       return ; 
+    }
+    if(req.url = "/quote") {
+        res.setHeader('Content-Type', 'text/html');  
+        res.write('<h1 style="color: red">I appreciate Per Scholas for the opportunity </h1>'); 
+        return ; 
+     }
+    res.setHeader('Content-Type', 'text/html');  
+    res.write('<h1 style="color: red">Hello World!</h1>');  
+    res.write('<p>I wonder what else we can send...</p>');  
+    res.end();
+});  
+
+
+
+server.listen(port, hostname, () => { 
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
